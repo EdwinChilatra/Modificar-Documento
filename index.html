@@ -11,20 +11,61 @@
         ¡Este es un mensaje importante!
     </div> -->
 
-    <script>
-        // Crear un elemento
-        let divAlert = document.createElement('div');
-        // divAlert.innerText = '¡Atención!Este es un mensaje importante'
-        divAlert.innerHTML = "<strong class'fs-1'> ¡Atencion! </strong> Este es un mensaje importante";
-        divAlert.className = "alert";
-        document.body.append(divAlert);
+    <ol id="ol">
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+    </ol>
 
-        let divAlert2 = document.createElement("div");
-        divAlert2.innerHTML = " Bienvenido Edwin"
-        divAlert2.className = "alert2"
-        document.body.append(divAlert2);
-        <italic>Edwin</italic>
+    <div id="id"></div>
+
+    <script>
+        // // Crear un elemento
+        // let divAlert = document.createElement('div');
+        // // divAlert.innerText = '¡Atención!Este es un mensaje importante'
+        // divAlert.innerHTML = "<strong class'fs-1'> ¡Atencion! </strong> Este es un mensaje importante";
+        // divAlert.className = "alert";
+        // document.body.append(divAlert);
+
+        // let divAlert2 = document.createElement("div");
+        // divAlert2.innerHTML = "Bienvenido <em>Edwin</em>"
+        // divAlert2.className = "alert2"
+        // document.body.append(divAlert2);
+
+        let ol = document.getElementById('ol');
+
+        let antes = document.createElement('li');
+        antes.innerHTML = 'Preprend';
+        ol.prepend(antes);
+        let despues = document.createElement('li');
+        despues.innerHTML = 'Append';
+        ol.append(despues);
+        
+        let izquierda = document.createElement('div');
+        izquierda.innerHTML = 'Izquierda (before)';
+        ol.before(izquierda);
+        let derecha = document.createElement('div');
+        derecha.innerHTML = 'derecha (after)';
+        ol.after(derecha);
+
+        // Crear un elemento dentro de 'li' utilizando 'preprend'. ¿Dónde se ubica?
+        let nuevo = document.createElement('li');
+        nuevo.innerHTML = 'Nuevo';
+        ol.prepend(nuevo);
+
+        // elem.insertAdjacentHTML(where, html)
+        /**
+         * where
+         * beforebegin --- Inserta inmediatamente antes del elem
+         * afterbegin --- Inserta al principio del elem
+         * beforeend --- Inserta al final del elem
+         * afterend --- Inserta inmediatamente despues del elem
+        */
+
+        let div = document.querySelector('#id');
+        div.insertAdjacentHTML('beforebegin', '<p>BeforeBegin</p>')
+        div.insertAdjacentHTML('afterend', '<p>afterend</p>')
+
     </script>
-    
 </body>
 </html>
