@@ -7,9 +7,24 @@
     <title>Modificar el Documento</title>
 </head>
 <body>
-    <div class="alert">
+    <!-- <div class="alert">
         ¡Este es un mensaje importante!
-    </div>
+    </div> -->
+
+    <script>
+        // Crear un elemento
+        let divAlert = document.createElement('div');
+        // divAlert.innerText = '¡Atención!Este es un mensaje importante'
+        divAlert.innerHTML = "<strong class'fs-1'> ¡Atencion! </strong> Este es un mensaje importante";
+        divAlert.className = "alert";
+        document.body.append(divAlert);
+
+        let divAlert2 = document.createElement("div");
+        divAlert2.innerHTML = " Bienvenido Edwin"
+        divAlert2.className = "alert2"
+        document.body.append(divAlert2);
+        <italic>Edwin</italic>
+    </script>
     
 </body>
 </html>

@@ -5,3 +5,15 @@
     color: #3C763D ;
     background-color: #DFF0D8;
 }
+.fs-1{
+    font-size: large;
+
+}
+.alert2{
+    margin-top: 15px;
+    padding: 15PX;
+    border: 1 px solid #D6E9C6;
+    border-radius: 5px;
+    color: #da3939 ;
+    background-color: #edf1fd;
+}
