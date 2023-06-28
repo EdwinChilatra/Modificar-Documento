@@ -7,65 +7,37 @@
     <title>Modificar el Documento</title>
 </head>
 <body>
-    <!-- <div class="alert">
-        ¡Este es un mensaje importante!
-    </div> -->
+    
+    <div class="alert" id="div">
+        <strong>¡Hola!</strong> <span> Usted ha leido un mensaje</span>
+    </div>
 
-    <ol id="ol">
-        <li>0</li>
-        <li>1</li>
-        <li>2</li>
-    </ol>
-
-    <div id="id"></div>
+    <ol id = "lista"></ol>
 
     <script>
-        // // Crear un elemento
-        // let divAlert = document.createElement('div');
-        // // divAlert.innerText = '¡Atención!Este es un mensaje importante'
-        // divAlert.innerHTML = "<strong class'fs-1'> ¡Atencion! </strong> Este es un mensaje importante";
-        // divAlert.className = "alert";
-        // document.body.append(divAlert);
 
-        // let divAlert2 = document.createElement("div");
-        // divAlert2.innerHTML = "Bienvenido <em>Edwin</em>"
-        // divAlert2.className = "alert2"
-        // document.body.append(divAlert2);
+        // Clonar un elemento
+        // elem.cloneNode(true) --> Clona con los hijos
+        // elem.cloneNode(false) --> Clona sin los hijos
 
-        let ol = document.getElementById('ol');
+        let div = document.querySelector('#div');
+        let div2 = div.cloneNode(true);
+        div2.querySelector('strong').innerHTML = '¡Hasta Luego!'; // Cambia lo que hay en el strong
+        div2.querySelector('span').innerHTML = '¡Vuelva Pronto!';
+        div.after(div2);
 
-        let antes = document.createElement('li');
-        antes.innerHTML = 'Preprend';
-        ol.prepend(antes);
-        let despues = document.createElement('li');
-        despues.innerHTML = 'Append';
-        ol.append(despues);
+        // TODO: Crear una lista dinamicamente con los elementos que ingrese el usuario por texto desde un prompt hasta que el usuario ingrese la palabra "fin".
+        // Nota: La palabra fin no debe aparecer en el listado.
+
+        let elemento = prompt ("Ingrese el elemento que desea agregar")
+        let lista = document.getElementById('lista')
+        while (elemento != "fin"){
+            let li = document.createElement("li");
+            li.textContent = elemento;
+            lista.appendChild(li);
+            elemento = prompt ("Ingrese el elemento que desea agregar")
+        }
         
-        let izquierda = document.createElement('div');
-        izquierda.innerHTML = 'Izquierda (before)';
-        ol.before(izquierda);
-        let derecha = document.createElement('div');
-        derecha.innerHTML = 'derecha (after)';
-        ol.after(derecha);
-
-        // Crear un elemento dentro de 'li' utilizando 'preprend'. ¿Dónde se ubica?
-        let nuevo = document.createElement('li');
-        nuevo.innerHTML = 'Nuevo';
-        ol.prepend(nuevo);
-
-        // elem.insertAdjacentHTML(where, html)
-        /**
-         * where
-         * beforebegin --- Inserta inmediatamente antes del elem
-         * afterbegin --- Inserta al principio del elem
-         * beforeend --- Inserta al final del elem
-         * afterend --- Inserta inmediatamente despues del elem
-        */
-
-        let div = document.querySelector('#id');
-        div.insertAdjacentHTML('beforebegin', '<p>BeforeBegin</p>')
-        div.insertAdjacentHTML('afterend', '<p>afterend</p>')
-
     </script>
 </body>
 </html>
